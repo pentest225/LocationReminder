@@ -44,7 +44,7 @@ class RemindersActivity : AppCompatActivity() {
             Snackbar.make(
                 binding.root,
                 R.string.permission_denied_explanation,
-                Snackbar.LENGTH_INDEFINITE
+                Snackbar.LENGTH_SHORT
             ).setAction(R.string.settings) {
                     startActivity(Intent().apply {
                         action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
@@ -61,7 +61,7 @@ class RemindersActivity : AppCompatActivity() {
             Snackbar.make(
                 binding.root,
                 R.string.permission_denied_explanation,
-                Snackbar.LENGTH_INDEFINITE
+                Snackbar.LENGTH_SHORT
             )
                 .setAction(R.string.settings) {
                     startActivity(Intent().apply {
@@ -86,10 +86,9 @@ class RemindersActivity : AppCompatActivity() {
             requestPermissionResult.launch(permissions)
         }
         @RequiresApi(Build.VERSION_CODES.Q)
-        if(runningQOrLater){
+        if(runningQOrLater && !hasLocationPermission()){
             requestBackgroundLocationPermission.launch(Manifest.permission.ACCESS_BACKGROUND_LOCATION)
         }
-
         super.onStart()
     }
 

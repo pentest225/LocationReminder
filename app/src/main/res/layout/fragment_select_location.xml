@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
     <data>
         <variable
@@ -10,7 +12,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-        <!-- TODO: Add the map fragment for the user to select the location -->
+            />
+        <!--   <fragment
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/map"
+              android:name="com.google.android.gms.maps.SupportMapFragment" />
+           Add the map fragment for the user to select the location -->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
